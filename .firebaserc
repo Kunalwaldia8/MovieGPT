@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "netflix-gpt-2496e",
+    "netflixgpt": "netflixgpt-b396f",
+    "Netflix-gpt": "netflix-gpt-2496e"
+  },
+  "targets": {},
+  "etags": {}
+}
