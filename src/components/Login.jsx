@@ -79,68 +79,95 @@ const Login = () => {
   };
 
   return (
-    <div className="relative w-full h-screen">
-      {/* Centered Form */}
-      <div className="absolute inset-0 flex justify-center items-center">
+    <div className="flex items-center justify-center min-h-[calc(100vh-4rem)] px-4">
+      <div className="w-full max-w-md">
+        <div className="text-center mb-8 mt-10">
+          <h1 className="text-4xl font-bold text-white mb-2">
+            Welcome to MovieGPT
+          </h1>
+          <p className="text-white/70">Your cinematic AI companion</p>
+        </div>
+
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="p-8 bg-black/70 text-white w-96 rounded-lg shadow-lg"
+          className="bg-black/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border-2 border-white/20"
         >
-          <h1 className="text-2xl mb-4 font-bold">
-            {isLogin ? "Sign In" : "Sign Up"}
-          </h1>
+          <h2 className="text-2xl font-semibold text-white mb-6 text-center">
+            {isLogin ? "Sign In" : "Create Account"}
+          </h2>
 
           {!isLogin && (
-            <input
-              ref={name}
-              className="p-3 mb-4 w-full bg-black/70 border-2 border-gray-400 rounded"
-              type="text"
-              placeholder="Full Name"
-            />
+            <div className="mb-4">
+              <input
+                ref={name}
+                className="w-full p-4 bg-white/10 border-2 border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-white transition-all"
+                type="text"
+                placeholder="Full Name"
+              />
+            </div>
           )}
-          <input
-            ref={email}
-            className="p-3 mb-4 w-full bg-black/70 border-2 border-gray-400 rounded"
-            type="text"
-            placeholder="Email "
-          />
-          <div className="relative">
+
+          <div className="mb-4">
+            <input
+              ref={email}
+              className="w-full p-4 bg-gray-200/10 border-2 border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-white transition-all"
+              type="text"
+              placeholder="Email"
+            />
+          </div>
+
+          <div className="mb-6 relative">
             <input
               ref={password}
-              className="p-3 mb-4 w-full bg-black/70 border-2 border-gray-400 rounded pr-12"
+              className="w-full p-4 bg-gray-200/10 border-2 border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-white transition-all pr-12"
               type={showPassword ? "text" : "password"}
               placeholder="Password"
             />
             <button
               type="button"
               onClick={togglePasswordVisibility}
-              className="absolute right-3 top-3 text-gray-400 hover:text-white transition-colors"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-white hover:text-red-300 transition-colors"
             >
               {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
             </button>
           </div>
-          <p className="text-red-500 m-2">{errorMessage}</p>
+
+          {errorMessage && (
+            <p className="text-red-500 mb-4 text-sm">{errorMessage}</p>
+          )}
+
           <button
             onClick={handleValidation}
-            className="p-3 mb-4 w-full bg-red-700 rounded-2xl hover:bg-red-600 transition"
+            className="w-full p-4 bg-red-600 hover:bg-red-700 text-white rounded-xl font-semibold transition-all transform hover:scale-[1.02] shadow-lg"
             type="submit"
           >
             {isLogin ? "Sign In" : "Sign Up"}
           </button>
-          <div className="flex justify-between items-center text-sm">
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
-              Remember me
+
+          <div className="mt-6 flex items-center justify-between text-sm text-red-400">
+            <label className="flex items-center space-x-2">
+              <input
+                type="checkbox"
+                className="rounded bg-white/10 border-2 border-red-600"
+              />
+              <span className="text-white pointer-cursor">Remember me</span>
             </label>
-            <a href="#" className="text-gray-400 hover:underline">
+            <a
+              href="#"
+              className="hover:text-red-300 transition-colors text-white pointer-cursor"
+            >
               Need help?
             </a>
           </div>
-          <div>
-            <button className="cursor-pointer p-4 m-4" onClick={handleClick}>
+
+          <div className="mt-8 text-center">
+            <button
+              onClick={handleClick}
+              className="text-white hover:text-red-300 transition-colors pointer-cursor"
+            >
               {isLogin
-                ? "New to Netflix? Sign Up now"
-                : "Already a member? Sign In"}
+                ? "New to MovieGPT? Create an account"
+                : "Already have an account? Sign in"}
             </button>
           </div>
         </form>

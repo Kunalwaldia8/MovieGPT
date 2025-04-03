@@ -26,7 +26,7 @@ const Header = () => {
             <span className="text-white font-medium">{user.displayName}</span>
             <button
               onClick={handleSignOut}
-              className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors"
+              className=" bg-red-700 hover:bg-red-800 text-white rounded-xl font-semibold  px-4 py-2  transition-colors"
             >
               Sign Out
             </button>
