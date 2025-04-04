@@ -30,7 +30,7 @@ const AuthProvider = ({ children }) => {
     });
 
     return () => unsubscribe();
-  }, [location.pathname]);
+  }, []);
 
   return <>{children}</>;
 };
