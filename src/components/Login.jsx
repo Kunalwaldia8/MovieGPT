@@ -7,7 +7,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { useDispatch } from "react-redux";
-import { addUser } from "../utils/slice";
+import { addUser } from "../utils/userSlice";
 import { Eye, EyeOff } from "lucide-react";
 
 const Login = () => {

@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { addUser, removeUser } from "../utils/slice";
+import { addUser, removeUser } from "../utils/userSlice";
 
 const AuthProvider = ({ children }) => {
   const dispatch = useDispatch();

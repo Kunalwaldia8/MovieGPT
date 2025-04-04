@@ -1,6 +1,7 @@
 import React from "react";
-
+import NowPlayingMovies from "../hooks/useNowPlayingMovies";
 export const Body = () => {
+  NowPlayingMovies();
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-7rem)] px-4">
       <h1 className="text-4xl font-bold text-white mb-8">

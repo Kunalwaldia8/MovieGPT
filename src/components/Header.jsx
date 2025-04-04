@@ -5,7 +5,7 @@ import { auth } from "../utils/firebase";
 import { NETFLIX_LOGO } from "../utils/constants";
 
 const Header = () => {
-  const user = useSelector((store) => store.userReducer);
+  const user = useSelector((store) => store.user);
 
   const handleSignOut = () => {
     signOut(auth)
