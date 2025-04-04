@@ -15,9 +15,8 @@ const AuthProvider = ({ children }) => {
       if (user) {
         const { uid, displayName, email } = user;
         dispatch(addUser({ uid, displayName, email }));
-        if (location.pathname === "/login") {
-          navigate("/");
-        }
+
+        navigate("/");
       } else {
         dispatch(removeUser());
         if (
