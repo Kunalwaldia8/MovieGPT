@@ -4,6 +4,9 @@ import Header from "./Header";
 import { BACKGROUND_IMAGE } from "../utils/constants";
 
 const Layout = () => {
+  if (navigator.online) {
+    return <div>Loading...</div>;
+  }
   return (
     <div className="min-h-screen bg-black">
       {/* Background with overlay */}
