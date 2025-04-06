@@ -12,10 +12,18 @@ export const Maincontainer = () => {
   const { original_title = "", overview = "", id } = topmovie || {};
 
   return (
-    <div className="text-white">
-      <VideoTitle title={original_title} overview={overview} />
+    <div className="relative h-screen w-screen overflow-hidden">
+      {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <VideoBackground movieid={id} />
+      </div>
+
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-r from-black via-black/20 to-black/30"></div>
+
+      {/* Video Title - Positioned in front */}
+      <div className="relative  mt-20 ml-20 z-20 h-full flex items-center">
+        <VideoTitle title={original_title} overview={overview} />
       </div>
     </div>
   );
