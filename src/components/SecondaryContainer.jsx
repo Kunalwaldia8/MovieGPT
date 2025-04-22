@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 
 const SecondaryContainer = () => {
   const movieData = useSelector((store) => store.movies);
-  console.log(movieData.popularMovies);
   return (
     <div className="relative z-40 w-full mx-20 -mt-20 scrollbar-none">
       {movieData.nowPlayingMovies.length != undefined && (
