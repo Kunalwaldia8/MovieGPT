@@ -1,12 +1,77 @@
-# React + Vite
+# MovieGPT 🎬
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive Netflix-inspired movie streaming UI built with React, Redux, and Tailwind CSS. Enjoy a beautiful video background, dynamic movie lists, and a clean, user-friendly interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Responsive Design:** Works seamlessly on all screen sizes, including 1080p and mobile devices.
+- **Video Background:** Eye-catching hero section with a movie trailer/video.
+- **Dynamic Movie Lists:** Browse Now Playing, Popular, Upcoming, and Top Rated movies.
+- **Horizontal Scroll:** Movie lists scroll horizontally for a Netflix-like experience.
+- **MultiLingual Feature** gives options upto 5 languages (english,hindi,marathi,gujrati,tamil)
+- **Redux State Management:** Efficient and scalable state handling.
+- **Authentication Ready:** Easily extendable for login/signup features using google Firebase .
+- **Modern UI:** Built with Tailwind CSS for fast, customizable styling.
 
-## Expanding the ESLint configuration
+## Deployment
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![MovieGPT](https://movie-gpt-one-liart.vercel.app/)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18+ recommended)
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+https://github.com/Kunalwaldia8/MovieGPT.git
+cd NetflixGPT
+
+# Install dependencies
+npm install
+# or
+yarn install
+```
+
+### Running the App
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Visit [http://localhost:5173](http://localhost:5173) in your browser.
+
+## Project Structure
+
+```
+NetflixGPT/
+├── public/
+├── src/
+│   ├── components/
+│   ├── hooks/
+│   ├── utils/
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
+├── tailwind.config.js
+├── vite.config.js
+└── package.json
+```
+
+## Customization
+
+- **API Integration:** Plug in your own movie API (e.g., TMDB) in the utils/hooks.
+- **Branding:** Replace logos, colors, and images in the public/ and src/assets/ folders.
+- **Authentication:** Integrate Firebase/Auth0 or your preferred auth provider.
+
+## Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+> Built with using React, Redux, and Tailwind CSS.

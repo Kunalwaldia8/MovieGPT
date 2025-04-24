@@ -25,7 +25,7 @@ export const Maincontainer = () => {
         <div className="absolute w-full overflow-hidden inset-0 z-10 bg-gradient-to-r from-black via-black/20 to-black/30" />
 
         {/* Video Title */}
-        <div className="relative mt-20 ml-20 z-20 h-[60%] flex items-center">
+        <div className="relative mt-20 ml-20 z-20 h-[80%] flex items-center">
           <VideoTitle title={original_title} overview={overview} />
         </div>
       </div>

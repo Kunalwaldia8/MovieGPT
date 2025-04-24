@@ -138,7 +138,7 @@ const Login = () => {
 
           <button
             onClick={handleValidation}
-            className="w-full p-4 bg-red-600 hover:bg-red-700 text-white rounded-xl font-semibold transition-all transform hover:scale-[1.02] shadow-lg"
+            className="w-full p-4 bg-gradient-to-r from-purple-700 to bg-red-700 hover:bg-gradient-to-r hover:from-purple-900  hover:to-red-900 text-white rounded-xl font-semibold transition-all transform hover:scale-[1.02] shadow-lg"
             type="submit"
           >
             {isLogin ? "Sign In" : "Sign Up"}

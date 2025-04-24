@@ -5,16 +5,24 @@ import UpcomingMovies from "../hooks/useUpcomingMovies";
 import TopRatedMovies from "../hooks/useTopRatedMovies";
 import { Maincontainer } from "./Maincontainer";
 import SecondaryContainer from "./SecondaryContainer";
+import { useSelector } from "react-redux";
+import GptSearch from "./GptSearch";
 export const Body = () => {
   NowPlayingMovies();
   PopularMovies();
   UpcomingMovies();
   TopRatedMovies();
-
+  const showSearch = useSelector((store) => store.showSearch.showSearch);
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-7rem)] px-4">
-      <Maincontainer />
-      <SecondaryContainer />
+      {showSearch ? (
+        <GptSearch />
+      ) : (
+        <>
+          <Maincontainer />
+          <SecondaryContainer />
+        </>
+      )}
     </div>
   );
 };
