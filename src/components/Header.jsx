@@ -16,7 +16,6 @@ const Header = () => {
     dispatch(setshowSearch());
   };
   const handleSelect = (e) => {
-    console.log(e.target.value);
     dispatch(setLanguage(e.target.value));
   };
   const handleSignOut = () => {

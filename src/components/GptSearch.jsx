@@ -33,7 +33,7 @@ const GptSearch = () => {
         const movies = gptMovies.split(",");
         const movieResults = movies.map((movie) => fetchMovies(movie));
         const resolvedResult = await Promise.all(movieResults);
-        console.log(resolvedResult);
+
         dispatch(
           setGptMovies({ MovieNames: movies, MovieResults: resolvedResult })
         );
