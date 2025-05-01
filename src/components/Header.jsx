@@ -11,7 +11,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const lang = useSelector((store) => store.language.lang);
-  const searchPage = useSelector((store) => store.showSearch.showSearch);
+  const searchPage = useSelector((store) => store.showSearch.GptSearch);
   const ToggleGPTSearch = () => {
     dispatch(setshowSearch());
   };

@@ -12,7 +12,7 @@ export const Body = () => {
   PopularMovies();
   UpcomingMovies();
   TopRatedMovies();
-  const showSearch = useSelector((store) => store.showSearch.showSearch);
+  const showSearch = useSelector((store) => store.showSearch.GptSearch);
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-7rem)] px-4">
       {showSearch ? (
