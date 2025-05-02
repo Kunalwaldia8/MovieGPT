@@ -8,8 +8,8 @@ const VideoBackground = ({ movieid }) => {
   useMovieTrailer(movieid);
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center">
-      <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+    <div className="w-screen h-1/2 md:h-full  flex items-center justify-center">
+      <div className="relative w-full h-full" style={{ paddingTop: "56.25%" }}>
         <iframe
           className="absolute top-0 left-0 w-full h-full"
           src={`https://www.youtube.com/embed/${videoKey}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=${videoKey}`}

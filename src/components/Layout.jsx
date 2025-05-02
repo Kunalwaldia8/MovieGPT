@@ -19,12 +19,14 @@ const Layout = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-red-900/40" />
+        {/* <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-red-900/40" /> */}
       </div>
 
       {/* Content */}
       <div className="relative z-10">
-        <Header />
+        <div>
+          <Header />
+        </div>
         <main className="min-h-[calc(100vh-4rem)]">
           <Outlet />
         </main>

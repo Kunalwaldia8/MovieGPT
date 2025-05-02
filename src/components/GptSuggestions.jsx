@@ -12,7 +12,7 @@ const GptSuggestions = () => {
     );
   }
   return (
-    <div className="relative z-40 w-full mx-20 -mt-20 scrollbar-none ">
+    <div className="relative z-40 mt-2 w-full mx-20  scrollbar-none ">
       {MovieNames.map((movie, index) => {
         return (
           <div className="bg-transparent">

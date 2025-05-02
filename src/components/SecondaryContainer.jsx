@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 const SecondaryContainer = () => {
   const movieData = useSelector((store) => store.movies);
   return (
-    <div className="relative z-40 w-full mx-20 -mt-20 scrollbar-none">
+    <div className="relative z-40 w-full mx-20 mt-10 md:-mt-30 scrollbar-none">
       {movieData.nowPlayingMovies && (
         <div>
           <MovieList

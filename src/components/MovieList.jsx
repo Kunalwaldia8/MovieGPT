@@ -10,7 +10,7 @@ export const MovieList = ({ title, movieData }) => {
           {movieData?.map(
             (movie) =>
               movie.poster_path && (
-                <div className="bg-black mx-2 p-2 rounded-xl ">
+                <div className="bg-black mx-2 px-1  rounded-xl ">
                   (
                   <MovieCards key={movie.id} posterPath={movie.poster_path} />)
                 </div>

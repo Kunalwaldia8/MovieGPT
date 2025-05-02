@@ -15,12 +15,12 @@ export const Body = () => {
   TopRatedMovies();
   const showSearch = useSelector((store) => store.showSearch.GptSearch);
   return (
-    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-7rem)] px-4">
+    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-7rem)] px-4 md:pt-0 pt-36">
       {showSearch ? (
-        <>
+        <div className="w-full flex flex-col items-center gap-6">
           <GptSearch />
           <GptSuggestions />
-        </>
+        </div>
       ) : (
         <>
           <Maincontainer />

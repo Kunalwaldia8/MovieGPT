@@ -23,48 +23,71 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute w-full bg-gradient-to-b from-black z-50">
-      <div className="flex justify-between items-center px-8 py-4">
-        <h1 className="text-3xl font-bold text-white">MovieGPT</h1>
+    <div className="absolute overflow-x-auto w-full max-w-screen bg-gradient-to-b from-black z-50">
+      <div className="px-4 py-4 md:px-8 md:py-4 flex flex-col md:flex-row md:justify-between">
+        {/* Top row: Logo and Username+SignOut (Stacked in mobile, horizontal in md+) */}
+        <div className="flex justify-between items-center">
+          <h1 className="md:text-3xl text-lg font-bold text-white">MovieGPT</h1>
+
+          {user && (
+            <div className="md:hidden flex items-center gap-4">
+              <span className="text-white font-medium">{user.displayName}</span>
+              <button
+                onClick={handleSignOut}
+                className="bg-gradient-to-r from-purple-700 to bg-red-700 hover:from-purple-900 hover:to-red-900 text-white rounded-xl font-semibold px-4 py-2 transition-colors"
+              >
+                {langConstants[lang].SignOut}
+              </button>
+            </div>
+          )}
+        </div>
+
         {user && (
-          <div className="flex items-center gap-4">
-            <select
-              className="text-white"
-              name="Language"
-              id="lang"
-              onChange={(e) => handleSelect(e)}
-            >
-              <option className="text-black" value="en">
-                English
-              </option>
-              <option className="text-black" value="hindi">
-                Hindi
-              </option>
-              <option className="text-black" value="marathi">
-                Marathi
-              </option>
-              <option className="text-black" value="gujarati">
-                Gujarati
-              </option>
-              <option className="text-black" value="tamil">
-                Tamil
-              </option>
-            </select>
-            <button
-              className="bg-gradient-to-r from-purple-700 to bg-red-700 hover:bg-gradient-to-r hover:from-purple-900  hover:to-red-900 text-white rounded-xl font-semibold  px-4 py-2 transition-colors"
-              onClick={ToggleGPTSearch}
-            >
-              {searchPage
-                ? langConstants[lang].HomePage
-                : langConstants[lang].GptSearch}
-            </button>
-            <span className="text-white font-medium">{user.displayName}</span>
-            <button
-              onClick={handleSignOut}
-              className="bg-gradient-to-r from-purple-700 to bg-red-700 hover:bg-gradient-to-r hover:from-purple-900  hover:to-red-900 text-white rounded-xl font-semibold px-4 py-2 transition-colors "
-            >
-              {langConstants[lang].SignOut}
-            </button>
+          <div className="flex flex-col md:flex-row md:items-center md:gap-4 mt-4 md:mt-0">
+            {/* Username + SignOut for md+ */}
+
+            {/* Language Select + GPT Button */}
+            <div className="flex items-center gap-4 mt-4 md:mt-0">
+              <select
+                className="text-white  border-gray-400 px-2 py-1 rounded"
+                name="Language"
+                id="lang"
+                onChange={handleSelect}
+              >
+                <option className="text-white" value="en">
+                  English
+                </option>
+                <option className="text-white" value="hindi">
+                  Hindi
+                </option>
+                <option className="text-white" value="marathi">
+                  Marathi
+                </option>
+                <option className="text-white" value="gujarati">
+                  Gujarati
+                </option>
+                <option className="text-white" value="tamil">
+                  Tamil
+                </option>
+              </select>
+              <button
+                className="bg-gradient-to-r from-purple-700 to bg-red-700 hover:from-purple-900 hover:to-red-900 text-white rounded-xl font-semibold px-4 py-2 transition-colors"
+                onClick={ToggleGPTSearch}
+              >
+                {searchPage
+                  ? langConstants[lang].HomePage
+                  : langConstants[lang].GptSearch}
+              </button>
+            </div>
+            <div className="hidden md:flex items-center gap-4">
+              <span className="text-white font-medium">{user.displayName}</span>
+              <button
+                onClick={handleSignOut}
+                className="bg-gradient-to-r from-purple-700 to bg-red-700 hover:from-purple-900 hover:to-red-900 text-white rounded-xl font-semibold px-4 py-2 transition-colors"
+              >
+                {langConstants[lang].SignOut}
+              </button>
+            </div>
           </div>
         )}
       </div>
